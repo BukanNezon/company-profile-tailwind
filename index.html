@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BukanAcademy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.5/dist/cdn.min.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="./public/styles.css">
+    <link rel="shortcut icon" href="./Images/nezon-icon.png" type="image/x-icon">
+</head>
+
+<body class="font-roboto bg-white">
+    
+
+    <!-- Navbar -->
+    <header x-data="{ open: false }" class="bg-gray-800 text-white fixed top-0 left-0 w-full z-50">
+        <div class="flex justify-between items-center p-6">
+            <!-- Logo -->
+            <a href="#home" class="flex items-center">
+                <img src="./Images/bukan-icon.png" alt="BukanAcademy Logo" class="h-12 md:h-16 lg:h-20">
+            </a>
+            <button @click="open = !open" class="lg:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <nav class="hidden lg:flex flex-grow justify-end items-center space-x-8">
+                <ul class="flex space-x-8">
+                    <li><a href="#about" class="hover:text-blue-400">About</a></li>
+                    <li><a href="#services" class="hover:text-blue-400">Achievements</a></li>
+                    <li><a href="#clients" class="hover:text-blue-400">Client</a></li>
+                    <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav x-show="open" @click.away="open = false" class="lg:hidden absolute top-15 left-0 w-full bg-custom-blue text-white">
+            <ul class="flex flex-col space-y-4 p-4">
+                <li><a href="#about" class="hover:text-blue-400">About</a></li>
+                <li><a href="#services" class="hover:text-blue-400">Achievements</a></li>
+                <li><a href="#clients" class="hover:text-blue-400">Client</a></li>
+                <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="relative flex flex-col md:flex-row items-center justify-between px-6 md:px-12 lg:px-16 xl:px-20 bg-white pt-24 md:pt-32 lg:pt-40 pb-16 md:pb-24 lg:pb-32 xl:pb-40">
+        <!-- Text & Animation -->
+        <div class="flex-1 md:w-1/2 lg:ml-16 xl:ml-32 mb-12 md:mb-0 flex flex-col items-start">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 mt-12">
+                <span class="text-blue-600">Always Make</span> <span id="typed-text" class="text-gray-800"></span>
+            </h1>
+            <p class="text-base md:text-lg lg:text-xl text-gray-700 mb-6">
+                Empowering developers with passion and creativity.
+            </p>
+            <a href="#offers" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition-transform transform hover:scale-105">
+                See More
+            </a>
+        </div>
+
+        <!-- Image -->
+        <div class="flex-1 md:w-1/2 flex items-center justify-center mt-8 md:mt-12">
+            <img src="./Images/stock-2.jpg" alt="Illustration" class="w-full max-w-md object-cover rounded-lg shadow-md">
+        </div>
+    </section>
+
+
+    <!-- About -->
+    <section id="about" class="bg-white py-16">
+        <div class="container mx-auto flex flex-col md:flex-row items-center px-4 md:px-6">
+        <!-- Image -->
+        <div class="w-full md:w-1/2">
+            <img src="./Images/stock-1.jpg" alt="Gedung" class="rounded-lg shadow-lg">
+        </div>
+    
+        <!-- Text -->
+        <div class="w-full md:w-1/2 mt-10 md:mt-0 md:pl-12">
+            <h2 class="text-3xl font-bold text-gray-800">BukanAcademy</h2>
+            <p class="text-gray-600 mt-4">
+                Didirikan pada Mei 2007, BukanAcademy adalah software house yang mengkhususkan diri dalam pengembangan 
+                keterampilan programming. Kami menawarkan kursus dan pelatihan praktis untuk memperkuat kemampuan coding individu, 
+                dengan fokus pada penyampaian materi terbaru dan relevan di dunia teknologi. 
+                Tujuan kami adalah memberdayakan pengembang dengan pengetahuan dan keterampilan yang mutakhir.
+            </p>
+            <p class="font-semibold text-lg text-gray-800 mt-6">#Try Before You Disappointed</p>
+    
+            <!-- Additional Info -->
+            <div class="flex mt-6">
+                <!-- Didirikan pada -->
+                <div class="flex items-center mr-6">
+                    <div class="bg-gray-800 text-white p-3 rounded-lg">
+                        <img src="./Images/home.icon.webp" alt="Didirikan pada" class="w-6 h-6">
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-gray-600">Didirikan pada</p>
+                        <h3 class="text-xl font-bold text-gray-800">2007</h3>
+                    </div>
+                </div>
+            
+                <!-- Jumlah Klien -->
+                <div class="flex items-center">
+                    <div class="bg-gray-800 text-white p-3 rounded-lg">
+                        <img src="./Images/user-icon.webp" alt="Jumlah Klien" class="w-6 h-6">
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-gray-600">Jumlah Klien</p>
+                        <h3 class="text-xl font-bold text-gray-800">&gt; 50</h3>
+                    </div>
+                </div>
+            </div>
+            
+    
+            <!-- Button -->
+            <a href="#services" class="mt-8 inline-block px-8 py-4 text-lg font-semibold text-white bg-blue-700 hover:bg-blue-800 rounded-lg shadow">
+            Tentang Kami
+            </a>
+        </div>
+        </div>
+    </section>
+
+
+    <!-- Services -->
+    <section id="services" class="py-12 bg-white text-white">
+        <h2 class="text-3xl font-bold text-center mb-8 text-blue-800">Achievements</h2>
+        <div class="container mx-auto px-4">
+            <ul class="relative space-y-12">
+                <!-- Service Item -->
+                <li class="relative flex flex-col items-center">
+                    <div class="bg-blue-800 text-white p-4 md:p-6 rounded-lg shadow-lg hover:bg-blue-600 max-w-md mx-auto">
+                        <time class="block mb-2 font-mono italic"><b>NEW</b> June 21, 2024</time>
+                        <div class="text-lg font-semibold mb-2">Innovative Coding Education Award</div>
+                        BukanAcademy diakui atas pendekatan inovatifnya dalam mengajarkan koding kepada remaja, menggabungkan metode interaktif yang membuat belajar koding menjadi pengalaman yang menarik.
+                    </div>
+                    <!-- Vertical Line -->
+                    <div class="absolute inset-x-1/2 top-full w-px bg-black h-12 md:h-20"></div>
+                </li>
+                <!-- Repeat for other items -->
+                <li class="relative flex flex-col items-center">
+                    <div class="bg-blue-800 text-white p-4 md:p-6 rounded-lg shadow-lg hover:bg-blue-600 max-w-md mx-auto">
+                        <time class="block mb-2 font-mono italic">May 21, 2020</time>
+                        <div class="text-lg font-semibold mb-2">Excellence in Youth Coding Development Award</div>
+                        BukanAcademy menerima penghargaan ini untuk keberhasilannya dalam mengembangkan keterampilan koding remaja secara efektif dan berdampak.
+                    </div>
+                    <!-- Vertical Line -->
+                    <div class="absolute inset-x-1/2 top-full w-px bg-black h-12 md:h-20"></div>
+                </li>
+                <li class="relative flex flex-col items-center">
+                    <div class="bg-blue-800 text-white p-4 md:p-6 rounded-lg shadow-lg hover:bg-blue-600 max-w-md mx-auto">
+                        <time class="block mb-2 font-mono italic">May 25, 2018</time>
+                        <div class="text-lg font-semibold mb-2">Best Educational Platform for Teens Award</div>
+                        BukanAcademy diakui karena menciptakan platform belajar koding yang luar biasa, yang mendukung dan memotivasi remaja untuk belajar dengan cara yang menyenangkan.
+                    </div>
+                    <!-- Vertical Line -->
+                    <div class="absolute inset-x-1/2 top-full w-px bg-black h-12 md:h-20"></div>
+                </li>
+                <li class="relative flex flex-col items-center">
+                    <div class="bg-blue-800 text-white p-4 md:p-6 rounded-lg shadow-lg hover:bg-blue-600 max-w-md mx-auto">
+                        <time class="block mb-2 font-mono italic">May 17, 2017</time>
+                        <div class="text-lg font-semibold mb-2">Outstanding Mentorship and Support Award</div>
+                        BukanAcademy dihargai atas dedikasinya dalam memberikan mentorship dan dukungan yang sangat berharga bagi remaja dalam perjalanan belajar koding mereka.
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- Clients -->
+    <section id="clients" class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-blue-800">Our Clients</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Logo 1 -->
+                <a href="https://digidesa.com/id/" class="flex justify-center" target="_blank" rel="noopener noreferrer">
+                    <img src="./Images/sdm-logo.webp" alt="Client 1" class="w-32 h-auto object-contain transition-transform transform hover:scale-110 hover:shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:bg-gradient-to-r from-blue-500 to-purple-500 p-4 rounded-lg">
+                </a>
+                <!-- Logo 2 -->
+                <a href="https://www.luckynetwork.net/id" class="flex justify-center" target="_blank" rel="noopener noreferrer">
+                    <img src="./Images/lucky-icon.png" alt="Client 2" class="w-32 h-auto object-contain transition-transform transform hover:scale-110 hover:shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:bg-gradient-to-r from-blue-500 to-purple-500 p-4 rounded-lg">
+                </a>
+                <!-- Logo 3 -->
+                <a href="https://smkn7rbi-pekanbaru.sch.id/" class="flex justify-center" target="_blank" rel="noopener noreferrer">
+                    <img src="./Images/smk-icon.png" alt="Client 3" class="w-32 h-auto object-contain transition-transform transform hover:scale-110 hover:shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:bg-gradient-to-r from-blue-500 to-purple-500 p-4 rounded-lg">
+                </a>
+                <!-- Logo 4 -->
+                <a href="https://ugm.ac.id/id/" class="flex justify-center" target="_blank" rel="noopener noreferrer">
+                    <img src="./Images/ugm-icon.png" alt="Client 4" class="w-32 h-auto object-contain transition-transform transform hover:scale-110 hover:shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:bg-gradient-to-r from-blue-500 to-purple-500 p-4 rounded-lg">
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Testimonials -->
+<section id="testimonials" class="py-12 bg-gray-100 relative">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-8 text-blue-800">What Our Clients Say</h2>
+
+        <!-- Swiper -->
+        <div class="swiper-container testimonials-swiper relative">
+            <div class="swiper-wrapper">
+                <!-- Testimonial 1 -->
+                <div class="swiper-slide">
+                    <div class="bg-white p-4 rounded-lg shadow-md w-full max-w-xs mx-auto">
+                        <img src="./Images/nezon-icon.png" alt="Client 1" class="w-12 h-12 rounded-full mx-auto mb-4">
+                        <p class="text-sm mb-2">"Platform BukanAcademy menawarkan pengalaman belajar yang luar biasa, mendukung dan memotivasi remaja dalam menguasai koding."</p>
+                        <p class="font-semibold text-sm">Lina Hartati</p>
+                        <p class="text-gray-500 text-xs">Penulis Teknologi Pendidikan</p>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="swiper-slide">
+                    <div class="bg-white p-4 rounded-lg shadow-md w-full max-w-xs mx-auto">
+                        <img src="./Images/nezon-icon.png" alt="Client 2" class="w-12 h-12 rounded-full mx-auto mb-4">
+                        <p class="text-sm mb-2">"Keberhasilan BukanAcademy dalam mengembangkan keterampilan koding remaja adalah bukti dedikasi dan keahlian mereka."</p>
+                        <p class="font-semibold text-sm">Andi Smith</p>
+                        <p class="text-gray-500 text-xs">Direktur Inovasi Pendidikan</p>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="swiper-slide">
+                    <div class="bg-white p-4 rounded-lg shadow-md w-full max-w-xs mx-auto">
+                        <img src="./Images/nezon-icon.png" alt="Client 3" class="w-12 h-12 rounded-full mx-auto mb-4">
+                        <p class="text-sm mb-2">"Dukungan dan mentorship dari BukanAcademy sangat mengesankan, membantu remaja tidak hanya dalam keterampilan teknis tetapi juga dalam karir mereka."</p>
+                        <p class="font-semibold text-sm">Ahmad Jaled Hasibuan</p>
+                        <p class="text-gray-500 text-xs">Fullstack Programmer</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Pagination for Testimonials -->
+            <div class="swiper-pagination testimonials-pagination absolute bottom-4 left-0 right-0 z-10"></div>       
+            <!-- Add Navigation for Testimonials -->
+            <div class="swiper-button-next testimonials-button-next absolute top-1/2 right-4 transform -translate-y-1/2 z-10"></div>
+            <div class="swiper-button-prev testimonials-button-prev absolute top-1/2 left-4 transform -translate-y-1/2 z-10"></div>
+        </div>
+    </div>
+</section>
+
+    
+
+    <!-- Offering -->
+    <section id="offers" class="bg-gray-800 py-12 px-4">
+        <div class="container mx-auto text-center">
+            <h2 class="text-white text-3xl font-bold mb-8">Tawaran Terbaik</h2>
+
+            <!-- Swiper -->
+            <div class="swiper-container offering-swiper relative">
+                <div class="swiper-wrapper">
+                    <!-- FRONTEND PROGRAMMER -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-xs mx-auto">
+                            <h3 class="text-lg font-bold text-gray-900 mb-4">FRONTEND PROGRAMMER</h3>
+                            <p class="text-gray-700 mb-4">Yang akan anda pelajari :</p>
+                            <ul class="text-gray-700 list-noe pl-5 mb-4">
+                                <li><span class="text-blue-800">&#10003;</span> HTML, CSS, dan JavaScript</li>
+                                <li><span class="text-blue-800">&#10003;</span> ReactJS atau VueJS</li>
+                                <li><span class="text-blue-800">&#10003;</span> Responsive Design</li>
+                                <li><span class="text-blue-800">&#10003;</span> Version Control (Git)</li>
+                                <li><span class="text-blue-800">&#10003;</span> Basic UX/UI Design</li>
+                                <li><span class="text-blue-800">&#10003;</span> Deployment Website</li>
+                            </ul>
+                            <a href="https://wa.me/081273718417" class="text-blue-800 font-bold">Pelajari Lebih Lanjut <span>&#10095;</span></a>
+                        </div>
+                    </div>
+                    <!-- BACKEND PROGRAMMER -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-xs mx-auto">
+                            <h3 class="text-lg font-bold text-gray-900 mb-4">BACKEND PROGRAMMER</h3>
+                            <p class="text-gray-700 mb-4">Yang akan anda pelajari :</p>
+                            <ul class="text-gray-700 list-none pl-5 mb-4">
+                                <li><span class="text-blue-800">&#10003;</span> NodeJS atau PHP</li>
+                                <li><span class="text-blue-800">&#10003;</span> Database Management</li>
+                                <li><span class="text-blue-800">&#10003;</span> API Development</li>
+                                <li><span class="text-blue-800">&#10003;</span> Version Control (Git)</li>
+                                <li><span class="text-blue-800">&#10003;</span> Security Best Practices</li>
+                                <li><span class="text-blue-800">&#10003;</span> Server Management</li>
+                            </ul>
+                            <a href="https://wa.me/081273718417" class="text-blue-800 font-bold">Pelajari Lebih Lanjut <span>&#10095;</span></a>
+                        </div>
+                    </div>
+                    <!-- FULLSTACK PROGRAMMER -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-xs mx-auto">
+                            <h3 class="text-lg font-bold text-gray-900 mb-4">FULLSTACK PROGRAMMER</h3>
+                            <p class="text-gray-700 mb-4">Yang akan anda pelajari :</p>
+                            <ul class="text-gray-700 list-none pl-5 mb-4">
+                                <li><span class="text-blue-800">&#10003;</span> FrontEnd & BackEnd Modules</li>
+                                <li><span class="text-blue-800">&#10003;</span> Database Management</li>
+                                <li><span class="text-blue-800">&#10003;</span> API Development</li>
+                                <li><span class="text-blue-800">&#10003;</span> Version Control (Git)</li>
+                                <li><span class="text-blue-800">&#10003;</span> Fullstack Project Building</li>
+                                <li><span class="text-blue-800">&#10003;</span> Deployment & Maintenance</li>
+                            </ul>
+                            <a href="https://wa.me/081273718417" class="text-blue-800 font-bold">Pelajari Lebih Lanjut <span>&#10095;</span></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination for Offering -->
+                <div class="swiper-pagination offering-pagination absolute bottom-4 left-0 right-0 z-10"></div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Contact -->
+    <section id="contact" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-blue-800">Contact Us</h2>
+            <form class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg hover:shadow-xl">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 mb-2">Name</label>
+                    <input type="text" id="name" class="w-full bg-gray-200 text-black rounded-lg py-2 px-4" placeholder="Your Name" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 mb-2">Email</label>
+                    <input type="email" id="email" class="w-full bg-gray-200 text-black rounded-lg py-2 px-4" placeholder="Your Email" required>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700 mb-2">Message</label>
+                    <textarea id="message" class="w-full bg-gray-200 text-black rounded-lg py-2 px-4" rows="4" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600">Send Message</button>
+            </form>
+
+            <!-- Call to Action Box -->
+            <div class="flex flex-wrap justify-center items-start mb-8">
+                <div class="bg-gray-800 text-white p-8 rounded-lg shadow-lg w-full sm:w-1/3 mt-8">
+                    <div class="flex items-center mb-6">
+                        <p class="font-bold text-lg">Minta Penawaran Produk Atau Kerja Sama</p>
+                    </div>
+                    <a href="#contact" class="bg-blue-500 text-white py-3 px-6 roundfed-lg inline-block rounded-lg hover:bg-blue-900 transition duration-300">Minta Sekarang</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-12 pb-1">
+        <div class="container mx-auto px-4 py-1">
+            <div class="flex flex-wrap justify-between items-start mb-8">
+                <!-- Wrapper to center content with space on the sides -->
+                <div class="flex flex-col sm:flex-row sm:justify-between w-full max-w-screen-lg mx-auto">
+                    <!-- Logo and About -->
+                    <div class="text-left sm:w-1/3 mb-8 sm:mb-0">
+                        <img src="./Images/bukan-icon.png" alt="BukanAcademy Logo" class="mb-4">
+                        <p class="text-gray-200 mb-6">"BukanAcademy empowers individuals and organizations to enhance their coding skills, transform their learning approach, simplify their educational journey, increase efficiency, and make informed career decisions."</p>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="text-left sm:text-end sm:w-1/3 mb-8 sm:mb-0">
+                        <p class="mb-4 flex items-center justify-start sm:justify-end">
+                            <img src="./Images/email-icon.png" alt="Email Icon" class="w-6 h-6 mr-2">
+                            <span>Email: <a href="mailto:bukanacademy@outlook.com" class="text-green-500 hover:underline">BukanAcademy@outlook.com</a></span>
+                        </p>
+                        <address class="not-italic text-left sm:text-end">
+                            <p class="mb-2">BukanAcademy Learning Tower</p>
+                            <p class="mb-2">Jl. KH. Ahmad Dahlan No.15 Lantai 3, Kp. Tengah, Kec. Sukajadi, Kota Pekanbaru, Riau 28128</p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Section -->
+            <div class="bg-gray-900 text-white py-4">
+                <div class="container mx-auto px-4">
+                    <!-- Footer content -->
+                    <div class="flex flex-col md:flex-row justify-center items-center">
+                        <p class="text-sm md:text-base mb-4 md:mb-0 text-center md:text-left">© 2024 BukanAcademy. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- WhatsApp Floating Button -->
+        <a href="https://wa.me/081273718417" class="fixed bottom-4 right-4 bg-green-500 p-4 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 z-50">
+            <img src="./Images/whatsapp-icon.png" alt="WhatsApp Icon" class="w-8 h-8">
+        </a>
+    </footer>
+
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="./public/script.js"></script>
+</body>
+</html>
